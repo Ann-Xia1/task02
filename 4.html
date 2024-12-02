@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isTomorrow(date) {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            return date.getDate() === tomorrow.getDate() 
+                && date.getMonth() === tomorrow.getMonth() 
+                && date.getFullYear() === tomorrow.getFullYear();
+        }
+        console.log(isTomorrow(new Date("2024/12/27"))); 
+        console.log(isTomorrow(new Date("2024/12/3"))); 
+    </script>
+</body>
+</html>

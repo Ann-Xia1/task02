@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dayOfYear(dateString) {
+            var date = new Date(dateString);
+            var start = new Date(date.getFullYear(), 0, 0);
+            var diff = date - start;
+            var oneDay = 1000 * 60 * 60 * 24;
+            var dayOfYear = Math.floor(diff / oneDay);
+            return dayOfYear;
+        }
+        console.log(dayOfYear("2021-01-01"));
+    </script>
+</body>
+</html>

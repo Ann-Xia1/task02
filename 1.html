@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addTime(amount, unit, timeStr) {
+            // console.log (timeStr);
+            if (timeStr == undefined) {
+                // var now = new Date();
+                timeStr = new Date();
+            }
+            var date = new Date(timeStr);
+            var unitLower = unit.toLowerCase();
+            switch (unitLower) {
+            case 'millisecond':
+            case 'milliseconds':
+            case 'ms':
+                date.setMilliseconds(date.getMilliseconds() + amount);
+                break;
+            case 'second':
+            case 'seconds':
+            case 's':
+                date.setSeconds(date.getSeconds() + amount);
+                break;
+            case 'minute':
+            case 'minutes':
+                date.setMinutes(date.getMinutes() + amount);
+                break;
+            case 'hour':
+            case 'hours':
+            case 'h':
+                date.setHours(date.getHours() + amount);
+                break;
+            case 'day':
+            case 'days':
+                date.setDate(date.getDate() + amount);
+                break;
+            case 'week':
+            case 'weeks':
+                date.setDate(date.getDate() + amount * 7);
+                break;
+            case 'month':
+            case 'months':
+                date.setMonth(date.getMonth() + amount);
+                break;
+            case 'year':
+            case 'years':
+                date.setFullYear(date.getFullYear() + amount);
+                break;
+            default:
+                throw new Error('Unsupported unit');
+            }
+            return date;
+        }
+        var newTime3 = addTime(7, 'day');
+        var newTime1 = addTime(7, "day", "2024/10/8 12:00:23"); 
+        var newTime2 = addTime(18, "week", "2024/10/8 12:00:23"); 
+        console.log(newTime3);
+        console.log(newTime1);
+        console.log(newTime2);
+    </script>
+</body>
+</html>
